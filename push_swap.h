@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:40:08 by hemottu           #+#    #+#             */
-/*   Updated: 2023/05/19 16:04:07 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/05/20 22:54:35 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ typedef	struct s_stack
 {
 	int	*a;
 	int	*b;
+	int	nba;
+	int	nbb;
 }			t_stack;
 
 
@@ -31,5 +33,8 @@ void	ft_sort_3(int *a, int ac);
 void	ft_sa(int *a);
 void	ft_ra(int *a, int ac);
 void	ft_rra(int *a, int ac);
+void	ft_sort_5(t_stack *stack, int ac);
+void	ft_pa(t_stack *stack);
+void	ft_pb(t_stack *stack);
 
 #endif

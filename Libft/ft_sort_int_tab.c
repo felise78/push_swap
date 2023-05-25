@@ -1,40 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stacks.c                                           :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 14:17:41 by hemottu           #+#    #+#             */
-/*   Updated: 2023/05/20 22:12:11 by hemottu          ###   ########.fr       */
+/*   Created: 2023/05/20 21:41:49 by hemottu           #+#    #+#             */
+/*   Updated: 2023/05/20 21:44:38 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	ft_put_in_A(int ac, char **av, t_stack *stack)
+void	sort_int_tab(int *tab, int size)
 {
 	int i;
 	int j;
 
-	j = 1;
-	stack->a = malloc(sizeof(int) * ac);
-	stack->b = malloc(sizeof(int) * ac);
-	if(!stack->a || !stack->b)
+	i = 0;
+	while (i < size - 1)
 	{
-		free(stack->a);
-		free(stack->b);
-		ft_put_error("Error\nThe stacks could not be created\n");
-		return (0);
-	}
-	i = 0;	
-	while (av[j])
-	{
-		stack->a[i] = ft_atoi(av[j]);
+		j = 0;
+		while(j < size - 1)
+		{
+			if(tab[j] > tab[j + 1])
+				ft_swap(&tab[j], &tab[j + 1]);
+			j++;
+		}
 		i++;
-		j++;
 	}
-	stack->nba = ac;
-	stack->nbb = 0;
-	return(1);
 }

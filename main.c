@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:39:40 by hemottu           #+#    #+#             */
-/*   Updated: 2023/05/19 16:05:32 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/05/20 22:56:29 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void ft_sort(t_stack *stack, int ac)
 {
 	if (ac <= 3)
 		ft_sort_3(stack->a, ac);
+	else if (ac == 4 || ac == 5)
+		ft_sort_5(stack, ac);
 	else
 		return ;
 }
@@ -33,18 +35,20 @@ int main (int ac, char **av)
 		free(stack.b);
 		return (1);
 	}
-	int i = 0;
-	while (i < ac)
-	{
-		printf("a[i] : %d\n", stack.a[i]);
-		i++;
-	}
+			int i = 0;
+			while (i < ac)
+			{
+				printf("a[%d] : %d		b[%d] : %d\n", i, stack.a[i], i, stack.b[i]);
+				i++;
+			}
+			printf("nba : %d | nbb : %d\n", stack.nba, stack.nbb);
 	ft_sort(&stack, ac);
-	i = 0;
-	while (i < ac)
-	{
-		printf("a[i] : %d\n", stack.a[i]);
-		i++;
-	}
+			i = 0;
+			while (i < ac)
+			{
+				printf("a[%d] : %d		b[%d] : %d\n", i, stack.a[i], i, stack.b[i]);
+				i++;
+			}
+			printf("nba : %d | nbb : %d\n", stack.nba, stack.nbb);
 	return(0);
 }

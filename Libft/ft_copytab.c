@@ -1,45 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   ft_copytab.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 13:34:10 by hemottu           #+#    #+#             */
-/*   Updated: 2023/05/19 16:04:08 by hemottu          ###   ########.fr       */
+/*   Created: 2023/05/27 16:08:53 by hemottu           #+#    #+#             */
+/*   Updated: 2023/05/27 16:22:09 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-void ft_ra(int *a, int ac)
+int		*ft_copytab(int *tab, int size)
 {
-	int temp;
+	int *copy;
 	int i;
 
 	i = 0;
-	temp = a[0];
-	while(i < ac - 1)
+	copy = malloc(sizeof(int) * size);
+	while (i < size)
 	{
-		a[i] = a[i + 1];
+		copy[i] = tab[i];
 		i++;
 	}
-	a[i] = temp;
-	ft_printf("ra\n");
-}
-
-void ft_rb(int *b, int ac)
-{
-	int temp;
-	int i;
-
-	i = 0;
-	temp = b[0];
-	while(i < ac - 1)
-	{
-		b[i] = b[i + 1];
-		i++;
-	}
-	b[i] = temp;
-	ft_printf("rb\n");
+	return (copy);
 }

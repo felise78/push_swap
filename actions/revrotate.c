@@ -26,3 +26,18 @@ void	ft_rra(int *a, int ac)
 	a[0] = temp;
 	ft_printf("rra\n");
 }
+
+void	ft_rrb(int *b, int ac)
+{
+	int temp;
+
+	ac -= 1;
+	temp = b[ac];
+	while (ac > 0)
+	{
+		b[ac] = b[ac - 1];
+		ac--;
+	}
+	b[0] = temp;
+	ft_printf("rrb\n");
+}

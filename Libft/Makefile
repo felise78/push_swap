@@ -59,6 +59,8 @@ SRC = ft_atoi.c \
       gnl/get_next_line.c \
       gnl/get_next_line_utils.c \
       ft_swap.c \
+      ft_sort_int_tab.c \
+      ft_copytab.c 
 
       
 OBJ = $(SRC:.c=.o)

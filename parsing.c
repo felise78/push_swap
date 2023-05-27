@@ -21,7 +21,7 @@ int	ft_parse(char **av)
 	{
 		if (!(ft_check_digits(av[i])))
 		{
-			ft_put_error("Error\nArguments should be digits\n");
+			ft_putstr_fd("Error\n", 2);
 			return (0);
 		}
 		i++;
@@ -65,7 +65,7 @@ int	ft_check_doubles(int *a, int ac)
 				j++;
 			else if (a[i] == a[j])
 			{
-				ft_put_error("Error\nDoubles are not accepted\n");
+				ft_putstr_fd("Error\n", 2);
 				return (0);
 			}
 		}

@@ -39,33 +39,46 @@ void ft_sort_3(int *a, int ac)
 	}
 }
 
-// void	ft_insert_from_b(t_stack *stack)
-// {
-// 	int i;
-	
-// 	i = stack->nba - 1;
-// 	while (i > 0)
-// 	{
-// 		if (stack->b[0] < stack->a[0])
-// 			ft_pa(stack);
-// 		else
-// 			ft_ra(stack->a, stack->nba);
-// 		i--;
-// 	}
-// }
+void	ft_sort_4(t_stack *a, t_stack *b)
+{
+	if (b->stack[0] < a->stack[0])
+		ft_pa(a, b);
+	else if (b->stack[0] > a->stack[2])
+	{
+		ft_pa(a, b);
+		ft_ra(a->stack, a->size);
+	}
+	else if(b->stack[0] > a->stack[0] && b->stack[0] < a->stack[1])
+	{
+		ft_ra(a->stack, a->size);
+		ft_pa(a, b);
+		ft_rra(a->stack, a->size);
+	}
+	else if(b->stack[0] > a->stack[1] && b->stack[0] < a->stack[2])
+	{
+		ft_rra(a->stack, a->size);
+		ft_pa(a, b);
+		ft_ra(a->stack, a->size);
+		ft_ra(a->stack, a->size);
+	}
+}
 
-void	ft_sort_5(t_stack *stack, int ac)
+void	ft_sort_5(t_stack *a, t_stack *b, int ac)
 {
 	if (ac == 4)
 	{
-		ft_pb(stack);
-		ft_sort_3(stack->a, 3);
-		//ft_insert_from_b(stack);
+		ft_pb(a, b);
+		ft_sort_3(a->stack, 3);
+		ft_sort_4(a, b);
 	}
 	else if (ac == 5)
 	{
-		ft_pb(stack);
-		ft_pb(stack);
-		ft_sort_3(stack->a, 3);
+		ft_pb(a, b);
+		ft_pb(a, b);
+		ft_sort_3(a->stack, 3);
+		ft_sort_by_cost(a, b);
+		//ft_sort_4(a, b);
+		//printf("ou devrait etre b[0] : %d\n", ft_is_place(a, b->stack[0]));
+		//printf("ou devrait etre b[1] : %d\n", ft_is_place(a, b->stack[1]));
 	}
 }

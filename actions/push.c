@@ -6,52 +6,54 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 13:45:28 by hemottu           #+#    #+#             */
-/*   Updated: 2023/05/25 12:42:57 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/05/27 14:23:09 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void ft_pa(t_stack *stack)
+void ft_pa(t_stack *a, t_stack *b)
 {
 	int i;
 	
-	i = stack->nba - 1;
+	i = a->size;
 	while(i > 0)
 	{
-		stack->a[i] = stack->a[i - 1];
+		a->stack[i] = a->stack[i - 1];
 		i--;
 	}
-	stack->a[0] = stack->b[0];
-	stack->nba++;
-	stack->nbb--;
-	while(i < stack->nbb)
+	a->stack[0] = b->stack[0];
+	a->size++;
+	b->size--;
+	while(i < b->size)
 	{
-		stack->b[i] = stack->b[i + 1];
+		b->stack[i] = b->stack[i + 1];
 		i++;
 	}
-	stack->b[i] = 0;
+	b->stack[i] = 0;
 	ft_printf("pa\n");
 }
 
-void ft_pb(t_stack *stack)
+void ft_pb(t_stack *a, t_stack *b)
 {
 	int i;
 	
-	i = stack->nbb;
+	i = b->size;
 	while(i > 0)
 	{
-		stack->b[i] = stack->b[i - 1];
+		b->stack[i] = b->stack[i - 1];
 		i--;
 	}
-	stack->b[0] = stack->a[0];
-	stack->nba--;
-	stack->nbb++;
-	while(i < stack->nba)
+	b->stack[0] = a->stack[0];
+	a->size--;
+	b->size++;
+	while(i < a->size)
 	{
-		stack->a[i] = stack->a[i + 1];
+		a->stack[i] = a->stack[i + 1];
 		i++;
 	}
-	stack->a[i] = 0;
+	a->stack[i] = 0;
 	ft_printf("pb\n");
 }
+
+

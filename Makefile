@@ -6,7 +6,7 @@
 #    By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 13:18:42 by hemottu           #+#    #+#              #
-#    Updated: 2023/05/27 15:54:05 by hemottu          ###   ########.fr        #
+#    Updated: 2023/05/27 20:31:17 by hemottu          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,6 @@ SRC = 	main.c \
 		sort_small.c \
 		insert.c \
 		sort_big.c \
-		mediane.c \
 		sort_med.c \
 		sort_by_cost.c \
 		is_sorted.c \

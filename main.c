@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:39:40 by hemottu           #+#    #+#             */
-/*   Updated: 2023/05/27 14:35:26 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/05/27 21:16:45 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void ft_sort(t_stack *a, t_stack *b, int ac)
 		ft_sort_3(a->stack, ac);
 	else if (ac == 4 || ac == 5)
 		ft_sort_5(a, b, ac);
-	else if (ac < 30)
+	else if (ac <= 100)
 		ft_sort_med(a, b);
 	// else if (ac <= 100)
 	// 	ft_sort_big(a, b, 5);
@@ -40,20 +40,20 @@ int main (int ac, char **av)
 		free(b.stack);
 		return (1);
 	}
-			int i = 0;
-			while (i < ac)
-			{
-				printf("a[%d] : %d		b[%d] : %d\n", i, a.stack[i], i, b.stack[i]);
-				i++;
-			}
-			printf("nba : %d | nbb : %d\n", a.size, b.size);
+			// int i = 0;
+			// while (i < ac)
+			// {
+			// 	printf("a[%d] : %d		b[%d] : %d\n", i, a.stack[i], i, b.stack[i]);
+			// 	i++;
+			// }
+			// printf("nba : %d | nbb : %d\n", a.size, b.size);
 	ft_sort(&a, &b, ac);
-			i = 0;
-			while (i < ac)
-			{
-				printf("a[%d] : %d		b[%d] : %d\n", i, a.stack[i], i, b.stack[i]);
-				i++;
-			}
-			printf("nba : %d | nbb : %d\n", a.size, b.size);
+			// i = 0;
+			// while (i < ac)
+			// {
+			// 	printf("a[%d] : %d		b[%d] : %d\n", i, a.stack[i], i, b.stack[i]);
+			// 	i++;
+			// }
+			// printf("nba : %d | nbb : %d\n", a.size, b.size);
 	return(0);
 }

@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 10:23:57 by hemottu           #+#    #+#             */
-/*   Updated: 2023/05/27 15:56:35 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/05/27 20:30:24 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void	sort_int_tab(int *tab, int size);
 void	ft_swap(int *a, int *b);
+int		*ft_copytab(int *tab, int size);
 
 #endif

@@ -5,15 +5,7 @@ int ft_is_smaller(int *stack, int size)
     int i;
     int *sorted;
 
-    sorted = malloc(sizeof(int) * size);
-    if (!sorted)
-        return (0);
-    i = 0;
-    while (i < size)
-    {
-        sorted[i] = stack[i];
-        i++;
-    }
+    sorted = ft_copytab(stack, size);
     sort_int_tab(sorted, size);
     i = 0;
     while (i < size && stack[i] != sorted[0])

@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:39:40 by hemottu           #+#    #+#             */
-/*   Updated: 2023/05/27 21:16:45 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/05/29 16:45:20 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,12 @@ void ft_sort(t_stack *a, t_stack *b, int ac)
 	else if (ac == 4 || ac == 5)
 		ft_sort_5(a, b, ac);
 	else if (ac <= 100)
+	{
 		ft_sort_med(a, b);
-	// else if (ac <= 100)
-	// 	ft_sort_big(a, b, 5);
-   	// else
-	// 	ft_sort_big(a, b, 11);
+		ft_sort_by_cost(a, b);
+	}
+	else 
+	  	ft_sort_big(a, b, ac);
 }
 
 int main (int ac, char **av)
@@ -32,7 +33,12 @@ int main (int ac, char **av)
 	t_stack b;
 	
 	ac -= 1;
-	if (ac == 0 || ft_parse(av) == 0 || ft_init_stacks(ac, av, &a, &b) == 0 )
+	if (ac == 0 || ft_parse(av) == 0)
+		return (1);
+	// if (ac > 100)
+	// 	ft_init_big_stacks(ac, av, &a, &b) ;
+	//else if (ac <= 500 && 
+	if (ft_init_stacks(ac, av, &a, &b) == 0)
 		return (1);
 	if (ft_check_doubles(a.stack, ac) == 0)
 	{
@@ -48,6 +54,8 @@ int main (int ac, char **av)
 			// }
 			// printf("nba : %d | nbb : %d\n", a.size, b.size);
 	ft_sort(&a, &b, ac);
+	// free(a.stack);
+	// free(b.stack);
 			// i = 0;
 			// while (i < ac)
 			// {

@@ -6,13 +6,13 @@
 #    By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/19 13:18:42 by hemottu           #+#    #+#              #
-#    Updated: 2023/05/27 20:31:17 by hemottu          ###   ########.fr        #
+#    Updated: 2023/05/29 13:52:28 by hemottu          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 #NAME_BONUS = 
-CC = gcc
+CC = clang
 CFLAGS = -Wall -Wextra -Werror -g
 RM = rm -rf
 SRC = 	main.c \
@@ -23,12 +23,12 @@ SRC = 	main.c \
 		actions/revrotate.c \
 		actions/push.c \
 		sort_small.c \
-		insert.c \
+		push_smaller.c \
 		sort_big.c \
 		sort_med.c \
 		sort_by_cost.c \
 		is_sorted.c \
-		utils.c
+		utils.c 
 
 #SRC_BONUS = 
 

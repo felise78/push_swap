@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 14:46:17 by hemottu           #+#    #+#             */
-/*   Updated: 2023/05/27 20:32:42 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/05/29 13:51:50 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,24 +43,11 @@ void ft_is_sorted(t_stack *a)
 	
     start = ft_is_smaller(a->stack, a->size);
 	if (!ft_is_in_order(a->stack, a->size, start))
-		return ;
-    ft_init_cost(a);
+		ft_putstr_fd("Error / stack pas triee\n", 2);
     if (start == 0)
         return ;
     else if (start <= a->size / 2)
-    {
-        while (a->cost[start])
-        {
-            ft_ra(a->stack, a->size);
-            a->cost[start]--;
-        }
-    }
+        ft_ra_x_amount(a, start);
     else
-    {   
-        while (a->cost[start])
-        {
-            ft_rra(a->stack, a->size);
-            a->cost[start]--;
-        }
-    }
+        ft_rra_x_amount(a, a->size - start);
 }

@@ -19,7 +19,7 @@
 # include <stddef.h>
 # include <ctype.h>
 # include <unistd.h>
-# include <bsd/string.h>
+//# include <bsd/string.h>
 # include "gnl/get_next_line.h"
 # include "ft_printf/ft_printf.h"
 

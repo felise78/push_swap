@@ -9,7 +9,7 @@ void ft_sort_med(t_stack *a, t_stack *b)
     {
         i = 0;
         pivot = ft_get_mediane(a->stack, a->size);
-        while (i < a->size / 2)
+        while (i < a->size && a->size > 3)
         {
             if (a->stack[0] <= pivot)
                 ft_pb(a, b);
@@ -19,5 +19,4 @@ void ft_sort_med(t_stack *a, t_stack *b)
         }
     }
     ft_sort_3(a->stack, a->size);
-    ft_sort_by_cost(a, b);
 }

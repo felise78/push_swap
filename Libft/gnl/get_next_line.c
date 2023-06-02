@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 16:09:45 by hemottu           #+#    #+#             */
-/*   Updated: 2023/05/19 13:50:09 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/06/02 09:45:31 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,16 +95,12 @@ char	*ft_rest(char *res)
 	return (dest);
 }
 
-
-
 // # include <stdio.h>
 // # include <unistd.h>
-
 // int main()
 // {
 //     int fd;
 // 	char *line;
-
 //     fd = open("fichier", O_RDONLY);
 // 	if (fd == -1)
 // 		return (0);
@@ -114,6 +110,4 @@ char	*ft_rest(char *res)
 // 		free(line);
 // 	}
 // 	close(fd);
-	
 // }
-

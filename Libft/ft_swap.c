@@ -6,15 +6,15 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 13:40:18 by hemottu           #+#    #+#             */
-/*   Updated: 2023/05/19 13:40:37 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/06/01 18:09:49 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_swap(int *a, int *b)
+void	ft_swap(int *a, int *b)
 {
-	int temp;
+	int	temp;
 
 	temp = *a;
 	*a = *b;

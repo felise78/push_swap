@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 11:55:07 by hemottu           #+#    #+#             */
-/*   Updated: 2022/12/15 12:50:21 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/06/01 18:09:18 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ char	**ft_split(char const *s, char c)
 {
 	char	**split;
 
-	split = calloc((ft_word_count(s, c) + 1) , sizeof(char *));
+	split = calloc((ft_word_count(s, c) + 1), sizeof(char *));
 	if (!split)
 		return (NULL);
 	split = ft_splitdup(s, c, split);
@@ -113,7 +113,6 @@ char	**ft_split(char const *s, char c)
 // {
 // 	char a[] = "Une phrase avec plein de mots dedans.";
 // 	char **b = ft_split(a, ' ');
-	
 // 	int i = 0;
 // 	while (b && b[i])
 // 		printf("%s\n", b[i++]);

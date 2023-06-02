@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_med.c                                         :+:      :+:    :+:   */
+/*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/01 15:22:38 by hemottu           #+#    #+#             */
-/*   Updated: 2023/06/01 19:20:33 by hemottu          ###   ########.fr       */
+/*   Created: 2023/06/01 18:02:46 by hemottu           #+#    #+#             */
+/*   Updated: 2023/06/01 18:05:08 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_sort_med(t_stack *a, t_stack *b)
+void	transform_stack_to_index(int *a, int size)
 {
-	int	pivot;
+	int	*sorted;
 	int	i;
+	int	j;
 
-	while (a->size > 3)
+	i = 0;
+	sorted = ft_sorted_tab(a, size);
+	while (i < size)
 	{
-		i = 0;
-		pivot = ft_get_mediane(a->stack, a->size);
-		while (i < a->size && a->size > 3)
-		{
-			if (a->stack[0] <= pivot)
-				ft_pb(a, b);
-			else
-				ft_ra(a);
-			i++;
-		}
+		j = 0;
+		while (a[i] != sorted[j])
+			j++;
+		a[i] = j;
+		i++;
 	}
-	ft_sort_3(a);
+	free(sorted);
 }

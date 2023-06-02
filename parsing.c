@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:39:55 by hemottu           #+#    #+#             */
-/*   Updated: 2023/05/19 15:48:05 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/06/01 22:15:59 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,17 @@
 
 int	ft_parse(char **av)
 {
-	int i;
+	int	i;
 
 	i = 1;
-	while(av[i])
+	while (av[i])
 	{
 		if (!(ft_check_digits(av[i])))
+		{
+			ft_putstr_fd("Error\n", 2);
+			return (0);
+		}
+		if (!(ft_check_overflow(av[i])))
 		{
 			ft_putstr_fd("Error\n", 2);
 			return (0);
@@ -29,34 +34,35 @@ int	ft_parse(char **av)
 	return (1);
 }
 
-int     ft_check_digits(char *str)
+int	ft_check_digits(char *str)
 {
-        int i;
-        int j;
-        char *charset = "-0123456789";
+	char	charset[12];
+	int		i;
+	int		j;
 
-        i = 0;
-        while(str[i])
-        {
-                j = 0;
-                while (str[i] != charset[j])
-                {
-                        j++;
-                        if(j == 11)
-                            return (0);
-                }
-                i++;
-        }
-        return (1);
+	ft_strlcpy(charset, "-0123456789", 12);
+	i = 0;
+	while (str[i])
+	{
+		j = 0;
+		while (str[i] != charset[j])
+		{
+			j++;
+			if (j == 11)
+				return (0);
+		}
+		i++;
+	}
+	return (1);
 }
 
 int	ft_check_doubles(int *a, int ac)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
-	while(i < ac)
+	while (i < ac)
 	{	
 		j = i + 1;
 		while (j < ac)
@@ -69,6 +75,30 @@ int	ft_check_doubles(int *a, int ac)
 				return (0);
 			}
 		}
+		i++;
+	}
+	return (1);
+}
+
+int	ft_check_overflow(char *s)
+{
+	long	nb;
+	int		sign;
+	int		i;
+
+	nb = 0;
+	sign = 1;
+	i = 0;
+	if (s[i] == '-')
+	{	
+		sign = sign * (-1);
+		i++;
+	}
+	while (s[i])
+	{
+		nb = nb * 10 + (s[i] - '0');
+		if (nb * sign < INT_MIN || nb * sign > INT_MAX)
+			return (0);
 		i++;
 	}
 	return (1);

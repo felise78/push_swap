@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 16:09:54 by hemottu           #+#    #+#             */
-/*   Updated: 2023/05/19 13:50:50 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/06/02 09:46:03 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include <unistd.h>
-#include "../libft.h"
+# include "../libft.h"
 
 int		ft_strchr_gnl(const char *str, char c);
 char	*get_next_line(int fd);

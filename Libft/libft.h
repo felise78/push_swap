@@ -6,7 +6,7 @@
 /*   By: hemottu <hemottu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 10:23:57 by hemottu           #+#    #+#             */
-/*   Updated: 2023/05/27 20:30:24 by hemottu          ###   ########.fr       */
+/*   Updated: 2023/06/02 09:23:55 by hemottu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@
 # include <stddef.h>
 # include <ctype.h>
 # include <unistd.h>
-//# include <bsd/string.h>
+# include <limits.h>
+# include <bsd/string.h>
 # include "gnl/get_next_line.h"
 # include "ft_printf/ft_printf.h"
 
